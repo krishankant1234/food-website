@@ -1,20 +1,15 @@
-// /** @type {import('tailwindcss').Config} */
-// export default {
-//   content: [],
-//   theme: {
-//     extend: {},
-//   },
-//   plugins: [],
-// }
-
-
-
+/** @type {import('tailwindcss').Config} */
 module.exports = {
     darkMode: ['class'],
     content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}', // adjust based on your project structure
+    // './index.html',
+    // './src/**/*.{js,ts,jsx,tsx}', // adjust based on your project structure
+	'./pages/**/*.{ts, tsx}',
+	'./components/**/*.{ts, tsx}',
+	'./app/**/*.{ts,tsx}',
+	'./src/**/*.{ts,tsx}',
   ],
+  prefix:"",
   theme: {
   	extend: {
   		borderRadius: {
@@ -23,6 +18,8 @@ module.exports = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		colors: {
+			orange:"var(--button)",
+			hoverOrange:"var(--hoverButtonColor)",
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
   			card: {
@@ -62,11 +59,12 @@ module.exports = {
   				'3': 'hsl(var(--chart-3))',
   				'4': 'hsl(var(--chart-4))',
   				'5': 'hsl(var(--chart-5))'
-  			}
-  		}
-  	}
+  			},
+  		},
+  	},
   },
-  plugins: [require("tailwindcss-animate")],
-}
+
+     plugins: [require("tailwindcss-animate")],
+};
 
 
